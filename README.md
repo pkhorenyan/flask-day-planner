@@ -27,9 +27,13 @@
 2. **Сборка и запуск:**
 
    ```bash
-   docker-compose up --build
+   docker compose up --build
 
 3. **Приложение будет доступно по адресу:**
 
 http://127.0.0.1:5000
 
+4. **Остановка приложения:**
+
+   ```bash
+   docker compose down
