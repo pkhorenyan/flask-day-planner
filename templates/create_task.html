@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Создать новую задачу</h2>
+    <form method="post">
+        <label>Заголовок:<br><input type="text" name="title" required></label><br><br>
+        <label>Описание:<br><textarea name="content"></textarea></label><br><br>
+        <button type="submit">Создать</button>
+    </form>
+{% endblock %}
