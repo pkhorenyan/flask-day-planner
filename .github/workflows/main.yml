@@ -23,6 +23,7 @@ jobs:
 
       - name: Copy project to EC2
         run: |
+          ssh -i ~/.ssh/id_ed25519 ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "rm -rf ~/app/*"
           rsync -avz -e "ssh -i ~/.ssh/id_ed25519" ./ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/${{ secrets.EC2_USER }}/app
 
       - name: Deploy with Docker Compose
