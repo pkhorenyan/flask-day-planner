@@ -8,6 +8,8 @@
 - Реализован веб-интерфейс с использованием Flask.
 - Созданы модели с помощью с SQLAlchemy.
 - Подготовлен Docker-образ для удобного развёртывания.
+- Сервер Nginx принимает запросы на порт 80 и проксирует их в Flask-контейнер на порт 5000
+- При каждом пуше в ветку master, GitHub Actions деплоит приложение в облако на EC2 инстанс
 
 ## Используемые технологии
 
@@ -15,6 +17,8 @@
 - **Flask-SQLAlchemy** — ORM для работы с базой данных
 - **PostgreSQL** — база данных
 - **Docker** — контейнеризация
+- **Nginx** — reverse proxy
+- **GitHub Actions** — CI/CD и автоматический деплой
 
 ## Запуск с помощью Docker Compose
 
@@ -23,18 +27,21 @@
    ```bash
    git clone https://github.com/pkhorenyan/flask-day-planner.git
    cd flask-day-planner
+   ```
    
 2. **Сборка и запуск:**
 
    ```bash
    docker compose up --build
+   ```
 
 3. **Приложение будет доступно по адресу:**
 
-   http://127.0.0.1:5000
+   http://127.0.0.1
 
 
 4. **Остановка приложения:**
 
    ```bash
    docker compose down
+   ```
