@@ -61,13 +61,9 @@ def mark_done(task_id):
     return redirect(url_for('index'))
 
 @app.cli.command("init-db")
-@with_appcontext
 def init_db():
     db.create_all()
-    click.echo("База данных инициализирована")
 
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
+    app.run()
