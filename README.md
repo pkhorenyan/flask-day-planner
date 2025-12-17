@@ -20,13 +20,14 @@
 - **Nginx** — reverse proxy
 - **GitHub Actions** — CI/CD и автоматический деплой
 
-## Запуск с помощью Docker Compose
+## Запуск локально с помощью Docker Compose
 
 1. **Загрузка:**
 
    ```bash
    git clone https://github.com/pkhorenyan/flask-day-planner.git
    cd flask-day-planner
+   cp .env.example .env
    ```
    
 2. **Сборка и запуск:**
